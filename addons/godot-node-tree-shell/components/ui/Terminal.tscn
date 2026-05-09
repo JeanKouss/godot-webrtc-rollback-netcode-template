@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://c8wvuh7gtv8gk"]
+
+[ext_resource type="Script" uid="uid://ey4hltpaj8e6" path="res://addons/godot-node-tree-shell/components/ui/Terminal.gd" id="1_felq1"]
+[ext_resource type="PackedScene" uid="uid://bp3hy2twvbd27" path="res://addons/godot-node-tree-shell/components/ui/ShellInput.tscn" id="1_jbsct"]
+[ext_resource type="Theme" uid="uid://b8lgso46bwmye" path="res://addons/godot-node-tree-shell/assets/TerminalTheme.tres" id="2_3o348"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3o348"]
+bg_color = Color(0, 0, 0, 0.7176471)
+
+[node name="Terminal" type="Window" unique_id=440503476]
+disable_3d = true
+oversampling_override = 1.0
+title = "GodotNodeTreeShellTerminal"
+initial_position = 5
+size = Vector2i(700, 600)
+transient = true
+keep_title_visible = true
+script = ExtResource("1_felq1")
+
+[node name="Panel" type="Panel" parent="." unique_id=153823880]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3o348")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=132723287]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3o348")
+follow_focus = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=492383894]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ShellHistory" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1920653884]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Shellinput" parent="ScrollContainer/MarginContainer/ShellHistory" unique_id=1254304238 instance=ExtResource("1_jbsct")]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="ScrollContainer/MarginContainer/ShellHistory" unique_id=1737679173]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="EmbededSubwindowsWarnPan" type="Panel" parent="." unique_id=244796725]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3o348")
+
+[node name="EmbededSubwindowsWarn" type="VBoxContainer" parent="EmbededSubwindowsWarnPan" unique_id=1709702291]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -41.5
+offset_right = 273.5
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3o348")
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn" unique_id=1889738778]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "For a better experience, we recommend disabling embed_subwindows in project settings.
+
+*Reload the project from disk if asked."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="OptionsButtons" type="HBoxContainer" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn" unique_id=172742443]
+layout_mode = 2
+theme_override_constants/separation = 42
+
+[node name="KeepEmbeded" type="Button" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn/OptionsButtons" unique_id=867317982]
+layout_mode = 2
+text = "Keep enabled"
+
+[node name="DesableEmbeded" type="Button" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn/OptionsButtons" unique_id=1457037595]
+layout_mode = 2
+text = "Desable"
+
+[node name="HSeparator" type="HSeparator" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn" unique_id=439385432]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="ExplainEmbeded" type="Label" parent="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn" unique_id=1021414929]
+self_modulate = Color(0.9999998, 0.8424205, 0.6797679, 1)
+custom_minimum_size = Vector2(38.07, 10)
+layout_mode = 2
+text = "When enabled, the terminal window is embedded inside the main viewport instead of appearing as a separate window;"
+autowrap_mode = 2
+
+[connection signal="button_down" from="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn/OptionsButtons/KeepEmbeded" to="." method="_on_keep_embeded_button_down"]
+[connection signal="button_down" from="EmbededSubwindowsWarnPan/EmbededSubwindowsWarn/OptionsButtons/DesableEmbeded" to="." method="_on_desable_embeded_button_down"]

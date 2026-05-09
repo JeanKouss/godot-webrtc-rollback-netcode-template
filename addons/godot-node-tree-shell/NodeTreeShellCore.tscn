@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://clfaqw0wqwo21"]
+
+[ext_resource type="Script" uid="uid://dsledk48ihwi8" path="res://addons/godot-node-tree-shell/NodeTreeShellCore.gd" id="1_gmkul"]
+[ext_resource type="PackedScene" uid="uid://c8wvuh7gtv8gk" path="res://addons/godot-node-tree-shell/components/ui/Terminal.tscn" id="2_ulb1s"]
+
+[node name="NodeTreeShellCore" type="Node" unique_id=725918633]
+script = ExtResource("1_gmkul")
+
+[node name="Terminal" parent="." unique_id=1450950083 instance=ExtResource("2_ulb1s")]
+visible = false

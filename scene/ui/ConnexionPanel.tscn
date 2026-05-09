@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dseegj8412d0t"]
+
+[ext_resource type="Script" uid="uid://xf8f7yudq10e" path="res://scenes/ui/ConnexionPanel.gd" id="1_yv5nl"]
+
+[node name="ConnexionPanel" type="Panel" unique_id=511117226]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 54.0
+offset_right = 400.0
+offset_bottom = -54.0
+grow_vertical = 2
+script = ExtResource("1_yv5nl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1478105109]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -90.5
+offset_right = 170.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2085105148]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="CreateGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1969814861]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Create Game"
+
+[node name="CodeLabel" type="Button" parent="MarginContainer/VBoxContainer" unique_id=851064559]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Click to copy"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1580714051]
+layout_mode = 2
+
+[node name="JoinCodeInput" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1267820787]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Enter match code"
+
+[node name="JoinGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=962895638]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Join Game"
+
+[node name="Hide" type="Button" parent="." unique_id=1347269196]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Hide"
+
+[connection signal="button_down" from="Hide" to="." method="_on_hide_button_down"]

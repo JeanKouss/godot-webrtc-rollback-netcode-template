@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dco6dq1ksfjrv"]
+
+[ext_resource type="Script" uid="uid://8uhs0jdhxi1f" path="res://addons/godot-node-tree-shell/components/ui/auto-complete/AutoCompletePanel.gd" id="1_bng1p"]
+
+[node name="AutoCompletePanel" type="Panel" unique_id=1143128217]
+top_level = true
+offset_right = 300.0
+offset_bottom = 200.0
+size_flags_vertical = 0
+script = ExtResource("1_bng1p")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=816480793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1174015642]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0

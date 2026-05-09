@@ -1,0 +1,77 @@
+[gd_resource type="Theme" format=3 uid="uid://b8lgso46bwmye"]
+
+[ext_resource type="FontFile" uid="uid://dct1xfaapeeig" path="res://addons/godot-node-tree-shell/assets/fonts/Sono_Proportional-Regular.ttf" id="1_8qdvy"]
+[ext_resource type="StyleBox" uid="uid://dors87yuka18" path="res://addons/godot-node-tree-shell/assets/theme-resources/auto-complete-button-targeted-style-box.tres" id="1_tal6c"]
+[ext_resource type="StyleBox" uid="uid://dt32rmpcybee2" path="res://addons/godot-node-tree-shell/assets/theme-resources/auto-complete-button-normal-style-box.tres" id="2_4jbps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tal6c"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leycr"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.11372549)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gylso"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.047058824)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqhux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gylso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqhux"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jbps"]
+bg_color = Color(0, 0, 0, 0)
+border_width_bottom = 1
+border_color = Color(0.19607843, 0.83137256, 0.49019608, 1)
+expand_margin_bottom = 4.0
+
+[resource]
+default_font = ExtResource("1_8qdvy")
+default_font_size = 18
+AutoCompleteButton/base_type = &"Button"
+AutoCompleteButton/colors/font_color = Color(1, 1, 1, 1)
+AutoCompleteButton/colors/icon_disabled_color = Color(0, 0, 0, 0)
+AutoCompleteButton/colors/icon_normal_color = Color(0, 0, 0, 0)
+AutoCompleteButton/styles/focus = ExtResource("1_tal6c")
+AutoCompleteButton/styles/hover = SubResource("StyleBoxFlat_tal6c")
+AutoCompleteButton/styles/normal = ExtResource("2_4jbps")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/styles/hover = SubResource("StyleBoxFlat_leycr")
+Button/styles/normal = SubResource("StyleBoxFlat_gylso")
+CurrentDirLabel/base_type = &"Label"
+CurrentDirLabel/colors/font_color = Color(0.19607843, 0.83137256, 0.49019608, 1)
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0.21230483, 0.21230483, 0.21230483, 1)
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_sqhux")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_gylso")
+LineEdit/styles/read_only = null
+Panel/styles/panel = SubResource("StyleBoxFlat_sqhux")
+ShellInputLabel/base_type = &"Label"
+ShellInputLabel/styles/focus = SubResource("StyleBoxFlat_4jbps")

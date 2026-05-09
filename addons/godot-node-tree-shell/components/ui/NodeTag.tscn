@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cf5m2dr1papi5"]
+
+[ext_resource type="Script" uid="uid://bjsa65m0fa7gf" path="res://addons/godot-node-tree-shell/components/ui/NodeTag.gd" id="1_mb8ov"]
+
+[node name="NodeTag" type="Button" unique_id=517870489]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -15.5
+offset_right = 38.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "NodeTag"
+alignment = 0
+expand_icon = true
+script = ExtResource("1_mb8ov")

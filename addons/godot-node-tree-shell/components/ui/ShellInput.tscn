@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bp3hy2twvbd27"]
+
+[ext_resource type="Script" uid="uid://bktycngm8823r" path="res://addons/godot-node-tree-shell/components/ui/ShellInput.gd" id="1_4outo"]
+[ext_resource type="Script" uid="uid://btdjqkjpixnvy" path="res://addons/godot-node-tree-shell/components/ui/CommandLineEdit.gd" id="2_afdjy"]
+[ext_resource type="PackedScene" uid="uid://dco6dq1ksfjrv" path="res://addons/godot-node-tree-shell/components/ui/auto-complete/AutoCompletePanel.tscn" id="2_panel"]
+
+[node name="CommandLineInput" type="HBoxContainer" unique_id=42545663]
+offset_right = 235.0
+offset_bottom = 31.0
+theme_override_constants/separation = 0
+script = ExtResource("1_4outo")
+
+[node name="OpeningBracket" type="Label" parent="." unique_id=1716434001]
+layout_mode = 2
+theme_type_variation = &"CurrentDirLabel"
+text = "["
+
+[node name="CurrentNodePath" type="Label" parent="." unique_id=976151951]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CurrentDirLabel"
+text = "/"
+
+[node name="ClosingBracket" type="Label" parent="." unique_id=1300170475]
+layout_mode = 2
+theme_type_variation = &"CurrentDirLabel"
+text = "]$ "
+
+[node name="CommandLineEdit" type="Label" parent="." unique_id=1273708644]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_mode = 2
+theme_type_variation = &"ShellInputLabel"
+script = ExtResource("2_afdjy")
+
+[node name="CommandCaret" type="ColorRect" parent="CommandLineEdit" unique_id=2005489389]
+custom_minimum_size = Vector2(2, 10)
+layout_mode = 0
+offset_right = 2.0
+offset_bottom = 30.0
+
+[node name="AutoCompletePanel" parent="." unique_id=1706154638 instance=ExtResource("2_panel")]
+layout_mode = 2

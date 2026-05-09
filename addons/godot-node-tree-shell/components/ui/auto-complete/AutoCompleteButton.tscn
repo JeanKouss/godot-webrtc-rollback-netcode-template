@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co71m43bk3vla"]
+
+[ext_resource type="Texture2D" uid="uid://b5p0muv43umvf" path="res://addons/godot-node-tree-shell/assets/icons/enter.svg" id="1_6ak4i"]
+[ext_resource type="Script" uid="uid://68vmhlln7iug" path="res://addons/godot-node-tree-shell/components/ui/auto-complete/AutoCompleteButton.gd" id="1_epyg2"]
+
+[node name="AutoCompleteButton" type="Button" unique_id=2062550710]
+size_flags_horizontal = 3
+theme_type_variation = &"AutoCompleteButton"
+icon = ExtResource("1_6ak4i")
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("1_epyg2")
